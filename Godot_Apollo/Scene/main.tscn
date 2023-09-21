@@ -1,0 +1,102 @@
+[gd_scene load_steps=27 format=3 uid="uid://b4snxgunt2427"]
+
+[ext_resource type="Script" path="res://Script/Main.gd" id="1_h6xgf"]
+[ext_resource type="Texture2D" uid="uid://dix35h6r6fiol" path="res://Graphics/port.png" id="3_i17lx"]
+[ext_resource type="Texture2D" uid="uid://dtnf771alw8r6" path="res://Graphics/BackGround.png" id="3_j0vrg"]
+[ext_resource type="Script" path="res://Script/Menu.gd" id="4_25r7q"]
+[ext_resource type="Texture2D" uid="uid://brd6j1h3aefsm" path="res://Graphics/gameover.png" id="5_ahw78"]
+[ext_resource type="Script" path="res://Script/LeftCounter.gd" id="5_o5yag"]
+[ext_resource type="Texture2D" uid="uid://dvixyr8405evw" path="res://Graphics/pushspace.png" id="6_hk3ko"]
+[ext_resource type="Texture2D" uid="uid://bixpvxdxljbxj" path="res://Graphics/Title.png" id="7_sps78"]
+[ext_resource type="Texture2D" uid="uid://db4t43dxv8i6b" path="res://Graphics/score.png" id="8_t5fx0"]
+[ext_resource type="Script" path="res://Script/ScoreNum.gd" id="10_q3uc3"]
+[ext_resource type="Texture2D" uid="uid://nltsybqovi53" path="res://Graphics/n0.png" id="11_4yr50"]
+[ext_resource type="Texture2D" uid="uid://chywaj410hpkd" path="res://Graphics/n1.png" id="12_vsyav"]
+[ext_resource type="Texture2D" uid="uid://dns5wd3sl405t" path="res://Graphics/n2.png" id="13_qepm6"]
+[ext_resource type="Texture2D" uid="uid://bkuy8hg5wucf4" path="res://Graphics/n3.png" id="14_70euj"]
+[ext_resource type="Texture2D" uid="uid://k6nwdjr6uyd7" path="res://Graphics/n4.png" id="15_n0u0k"]
+[ext_resource type="Texture2D" uid="uid://bf8ehn8ftmuyj" path="res://Graphics/n5.png" id="16_85tb4"]
+[ext_resource type="Texture2D" uid="uid://4ai30k6pby24" path="res://Graphics/n6.png" id="17_xtrej"]
+[ext_resource type="Texture2D" uid="uid://dsfug3o4cphhy" path="res://Graphics/n7.png" id="18_ummuw"]
+[ext_resource type="Texture2D" uid="uid://cehi3jmn2wqxv" path="res://Graphics/n8.png" id="19_8tf0p"]
+[ext_resource type="Texture2D" uid="uid://cu3raylaxxihu" path="res://Graphics/n9.png" id="20_ho3j7"]
+[ext_resource type="Script" path="res://Script/Rabbit.gd" id="21_1snbq"]
+[ext_resource type="Texture2D" uid="uid://c631uovn2t1yu" path="res://Graphics/rabbit1.png" id="22_0j8it"]
+[ext_resource type="Texture2D" uid="uid://cxtj22qlhp44n" path="res://Graphics/rabbit2.png" id="23_m6cij"]
+[ext_resource type="Texture2D" uid="uid://c7grxww32rhw1" path="res://Graphics/rabbit3.png" id="24_geqmc"]
+[ext_resource type="Texture2D" uid="uid://b6emyadudc7ri" path="res://Graphics/rabbit4.png" id="25_fqmae"]
+[ext_resource type="Script" path="res://Script/Sound.gd" id="26_n3bv7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h6xgf")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+z_index = -10
+z_as_relative = false
+texture = ExtResource("3_j0vrg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="Port" type="Sprite2D" parent="."]
+z_index = -5
+z_as_relative = false
+position = Vector2(0, 64)
+texture = ExtResource("3_i17lx")
+
+[node name="Menu" type="Sprite2D" parent="."]
+z_index = 10
+script = ExtResource("4_25r7q")
+
+[node name="GameOver" type="Sprite2D" parent="Menu"]
+texture = ExtResource("5_ahw78")
+
+[node name="PushSpace" type="Sprite2D" parent="Menu"]
+position = Vector2(0, 24)
+texture = ExtResource("6_hk3ko")
+
+[node name="Title" type="Sprite2D" parent="Menu"]
+position = Vector2(0, -8)
+texture = ExtResource("7_sps78")
+
+[node name="Score" type="Sprite2D" parent="Menu"]
+position = Vector2(80, -84)
+texture = ExtResource("8_t5fx0")
+
+[node name="Left" type="Node2D" parent="Menu"]
+position = Vector2(-156, -84)
+script = ExtResource("5_o5yag")
+
+[node name="ScoreNum" type="Node2D" parent="Menu"]
+position = Vector2(148, -84)
+script = ExtResource("10_q3uc3")
+textures = Array[Texture]([ExtResource("11_4yr50"), ExtResource("12_vsyav"), ExtResource("13_qepm6"), ExtResource("14_70euj"), ExtResource("15_n0u0k"), ExtResource("16_85tb4"), ExtResource("17_xtrej"), ExtResource("18_ummuw"), ExtResource("19_8tf0p"), ExtResource("20_ho3j7")])
+
+[node name="Rabbit1" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(-64, 72)
+script = ExtResource("21_1snbq")
+idelAnim = Array[Texture]([ExtResource("22_0j8it"), ExtResource("23_m6cij")])
+sideAnim = Array[Texture]([ExtResource("24_geqmc"), ExtResource("25_fqmae")])
+animStep = 10
+
+[node name="Body" type="Sprite2D" parent="Rabbit1"]
+texture = ExtResource("22_0j8it")
+
+[node name="Rabbit2" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(64, 72)
+script = ExtResource("21_1snbq")
+idelAnim = Array[Texture]([ExtResource("22_0j8it"), ExtResource("23_m6cij")])
+sideAnim = Array[Texture]([ExtResource("24_geqmc"), ExtResource("25_fqmae")])
+animStep = 10
+
+[node name="Body" type="Sprite2D" parent="Rabbit2"]
+texture = ExtResource("22_0j8it")
+
+[node name="Sound" type="Node" parent="."]
+script = ExtResource("26_n3bv7")
+
+[node name="Bgm" type="AudioStreamPlayer2D" parent="Sound"]
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="Sound"]

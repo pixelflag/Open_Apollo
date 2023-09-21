@@ -1,0 +1,37 @@
+[gd_scene load_steps=13 format=3 uid="uid://bfgccdnapxyfs"]
+
+[ext_resource type="Script" path="res://Script/Apollo.gd" id="1_gnflt"]
+[ext_resource type="Texture2D" uid="uid://dpwemgc16yk07" path="res://Graphics/apollo1.png" id="2_shl4k"]
+[ext_resource type="Texture2D" uid="uid://dunb06hiy0v5a" path="res://Graphics/apollo2.png" id="3_oixcp"]
+[ext_resource type="Texture2D" uid="uid://c1av7qkg8ybxj" path="res://Graphics/boost.png" id="4_6x2bx"]
+[ext_resource type="Texture2D" uid="uid://cehiwjtkd13qs" path="res://Graphics/apollo_c1.png" id="4_vn67b"]
+[ext_resource type="Texture2D" uid="uid://dasp2be3bfpo6" path="res://Graphics/apollo_c2.png" id="5_wecpb"]
+[ext_resource type="Texture2D" uid="uid://bgnl718g05rjx" path="res://Graphics/apollo_c3.png" id="6_pjma6"]
+[ext_resource type="Texture2D" uid="uid://drdone5ld4vj4" path="res://Graphics/apollo_c4.png" id="7_xb2ts"]
+[ext_resource type="Texture2D" uid="uid://6h45anlffia1" path="res://Graphics/apollo_c5.png" id="8_l0qw3"]
+[ext_resource type="Texture2D" uid="uid://cu6dmhymnd3hf" path="res://Graphics/apollo_c6.png" id="9_bply1"]
+[ext_resource type="Texture2D" uid="uid://dg3d1ggxpb6i5" path="res://Graphics/apollo_c7.png" id="10_orlbm"]
+[ext_resource type="Texture2D" uid="uid://bh0gd78ir3mat" path="res://Graphics/apollo_c8.png" id="11_voydf"]
+
+[node name="Apollo" type="Node2D"]
+script = ExtResource("1_gnflt")
+defaultSprite = ExtResource("2_shl4k")
+randingSprite = ExtResource("3_oixcp")
+rolingSprites = Array[Texture]([ExtResource("4_vn67b"), ExtResource("5_wecpb"), ExtResource("6_pjma6"), ExtResource("7_xb2ts"), ExtResource("8_l0qw3"), ExtResource("9_bply1"), ExtResource("10_orlbm"), ExtResource("11_voydf")])
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_shl4k")
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(10, 4)
+rotation = -1.5708
+texture = ExtResource("4_6x2bx")
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(-10, 4)
+rotation = 1.5708
+texture = ExtResource("4_6x2bx")
+
+[node name="Up" type="Sprite2D" parent="."]
+position = Vector2(0, 13)
+texture = ExtResource("4_6x2bx")
